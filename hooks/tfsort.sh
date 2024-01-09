@@ -13,11 +13,11 @@ function main {
   common::export_provided_env_vars "${ENV_VARS[@]}"
   common::parse_and_export_env_vars
 
-  tfsort_ "${HOOK_CONFIG[*]}" "${ARGS[*]}" "${FILES[@]}"
+  echo "${FILES[@]}"
+  # tfsort_ "${HOOK_CONFIG[*]}" "${ARGS[*]}" "${FILES[@]}"
   # for target_file in "${FILES[@]}"; do
-  #   echo "Running tfsort on ${FILES[@]}"
+  #   echo "Running tfsort on ${target_file}"
   #   tfsort "${ARGS[@]}" "${target_file}"
-
   # done
 }
 
