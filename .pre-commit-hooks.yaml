@@ -151,3 +151,12 @@
     - --args=terraform
   files: \.tf$
   require_serial: true
+
+- id: tfsort
+  name: tfsort
+  description: Runs tfsort on Terraform variables and outputs.
+  language: script
+  entry: hooks/tfsort.sh
+  args: []
+  files: \variables.tf|outputs.tf$
+  require_serial: true
