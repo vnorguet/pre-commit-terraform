@@ -158,5 +158,5 @@
   language: script
   entry: hooks/tfsort.sh
   args: []
-  files: variables.tf$
+  files: \.tf$
   require_serial: true
