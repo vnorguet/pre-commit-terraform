@@ -51,7 +51,7 @@ function tfsort_ {
   for target_file in "${FILES[@]}"; do
     echo "Running tfsort on ${target_file}"
     filename="$(basename "${target_file}")"
-    if test -f "${filename}"; then
+    if test -f "${filename}" && test "$(awk ' BEGIN {count=0;}  { if ($1 == "output") count+=1} { if ($1 == "variable") count+=1} END {print count}' live/common/outputs.tf)" -gt 0; then
       tfsort "$(basename "${filename}")"
       exit_code=$?
       # Return immediately if tfsort fails
