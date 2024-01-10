@@ -50,8 +50,9 @@ function tfsort_ {
 
   for target_file in "${FILES[@]}"; do
     echo "Running tfsort on ${target_file}"
-    if test -f "${target_file}"; then
-      tfsort "$(basename "${target_file}")"
+    filename="$(basename "${target_file}")"
+    if test -f "${filename}"; then
+      tfsort "$(basename "${filename}")"
       exit_code=$?
       # Return immediately if tfsort fails
       [[ "${exit_code}" -ne "0" ]] && return ${exit_code};
