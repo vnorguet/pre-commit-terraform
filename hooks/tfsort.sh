@@ -17,7 +17,6 @@ function main {
   common::per_dir_hook "$HOOK_ID" "${#ARGS[@]}" "${ARGS[@]}" "${FILES[@]}"
 }
 
-
 #######################################################################
 # Unique part of `common::per_dir_hook`. The function is executed in loop
 # on each provided dir path. Run wrapped tool with specified arguments
@@ -40,7 +39,7 @@ function per_dir_hook_unique_part {
   # shellcheck disable=SC2034 # Unused var.
   local -a -r args=("$@")
 
-  tfsort_
+  tfsort_ "${args[@]}"
 }
 
 #######################################################################
