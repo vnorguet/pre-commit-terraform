@@ -157,6 +157,5 @@
   description: Runs tfsort on Terraform variables and outputs.
   language: script
   entry: hooks/tfsort.sh
-  args: []
   files: (variables|outputs).tf$
   require_serial: true
