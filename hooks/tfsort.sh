@@ -39,7 +39,7 @@ function per_dir_hook_unique_part {
   # shellcheck disable=SC2034 # Unused var.
   local -a -r args=("$@")
 
-  tfsort_ "${args[@]}"
+  tfsort_
 }
 
 #######################################################################
